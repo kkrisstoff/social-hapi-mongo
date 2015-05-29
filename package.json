@@ -1,0 +1,20 @@
+{
+  "name": "social-hapi-mongo",
+  "version": "0.0.1",
+  "description": "nodejs-hapi-mongo API",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^0.8.3",
+    "ejs": "^2.3.1",
+    "handlebars": "^3.0.3",
+    "hapi": "^8.5.2",
+    "hapi-auth-basic": "^2.0.0",
+    "mongoose": "^4.0.4",
+    "nconf": "^0.7.1"
+  }
+}

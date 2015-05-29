@@ -1,0 +1,14 @@
+{
+    "port": 8000,
+    "uri": "",
+    "host": "",
+    "db": {
+        "path": "mongodb://localhost/auth_node"
+    },
+    "session": {
+        "secret": "Keep your secrets"
+    },
+    "cookie": {
+        "maxAge": 1200000
+    }
+}

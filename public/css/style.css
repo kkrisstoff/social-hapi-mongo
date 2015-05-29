@@ -1,0 +1,48 @@
+
+select{
+    height: 30px;
+    line-height: 30px;
+}
+
+.login-form,
+.signup-form{
+    background-color: #0067ab;
+    color: #eee;
+    width: 380px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+}
+.login-form input[type="text"],
+.login-form input[type="password"],
+.signup-form input[type="text"],
+.signup-form input[type="password"]{
+    width: 100%;
+}
+
+.login-form input[type="submit"],
+.login-form .button,
+.signup-form input[type="submit"],
+.signup-form .button{
+    margin: 10px 20px;
+}
+
+.signup-form,
+.login-form h3{
+    text-align: center;
+}
+
+.board-form{
+    padding: 20px 0;
+}
+
+.board-form input{
+    background-color: #fff;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.user-info{
+    float: right;
+    font-weight: bold;
+}
