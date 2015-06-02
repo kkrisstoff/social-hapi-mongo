@@ -3,7 +3,7 @@
     "uri": "",
     "host": "",
     "db": {
-        "path": "mongodb://localhost/auth_node"
+        "path": "mongodb://localhost/social_hapi"
     },
     "session": {
         "secret": "Keep your secrets"

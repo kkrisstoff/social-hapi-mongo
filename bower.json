@@ -1,0 +1,17 @@
+{
+  "name": "social-hapi-mongo",
+  "version": "0.0.0",
+  "homepage": "https://github.com/kkrisstoff/social-hapi-mongo",
+  "authors": [
+    "PashuraKostya <k.pashura@mobidev.biz>"
+  ],
+  "main": "app.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

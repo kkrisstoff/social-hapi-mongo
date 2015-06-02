@@ -4,13 +4,33 @@ module.exports = function () {
          {
              method: 'GET',
              path: '/',
-             handler: require('./home').get
+             config: {
+                 handler: require('./home').get,
+                 auth: 'session'
+             }
+         },
+         {
+             method: 'GET',
+             path: '/home',
+             config: {
+                 handler: require('./home').get,
+                 auth: 'session'
+             }
          },
          {
              method: 'GET',
              path: '/login',
              config: {
-                 handler: require('./login').get
+                 handler: require('./login').get,
+                 auth: {
+                     mode: 'try',
+                     strategy: 'session'
+                 },
+                 plugins: {
+                     'hapi-auth-cookie': {
+                         redirectTo: false
+                     }
+                 }
              }
          },
          {
