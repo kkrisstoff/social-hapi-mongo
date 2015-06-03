@@ -19,6 +19,14 @@ module.exports = function () {
          },
          {
              method: 'GET',
+             path: '/images',
+             config: {
+                 handler: require('./images').get,
+                 auth: 'session'
+             }
+         },
+         {
+             method: 'GET',
              path: '/login',
              config: {
                  handler: require('./login').get,
@@ -33,18 +41,42 @@ module.exports = function () {
                  }
              }
          },
+
          {
              method: 'POST',
              path: '/login',
              config: {
                  handler: require('./login').post
              }
+         },
+         {
+             method: 'GET',
+             path: '/logout',
+             config: {
+                 handler: require('./logout').get
+             }
 
          },
          {
              method: 'POST',
              path: '/register',
-             handler: require('./register').post
+             config: {
+                 handler: require('./register').post
+             }
+         },
+         {
+             method: 'POST',
+             path: '/image/upload',
+             config: {
+                 payload: {
+                     output: 'file',
+                     maxBytes: 209715200,
+                     parse: true,
+                     allow: 'multipart/form-data'
+                     //allow: 'application/x-www-form-urlencoded'
+                 },
+                 handler: require('./image/upload').post
+             }
          }
      ]
 };

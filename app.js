@@ -27,7 +27,7 @@ var mongoose = require('./lib/mongoose');
 
 // Print some information about the incoming request for debugging purposes
 server.ext('onRequest', function (request, reply) {
-    var str = request.method.toUpperCase() + " :" + request.path + "\n" + JSON.stringify(request.query);
+    var str = request.method.toUpperCase() + ":  " + request.path + "\n"/* + JSON.stringify(request.query)*/;
     console.log(str);
 
     return reply.continue();
