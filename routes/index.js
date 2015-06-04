@@ -73,9 +73,9 @@ module.exports = function () {
                      maxBytes: 209715200,
                      parse: true,
                      allow: 'multipart/form-data'
-                     //allow: 'application/x-www-form-urlencoded'
                  },
-                 handler: require('./image/upload').post
+                 handler: require('./image/upload').post,
+                 auth: 'session'
              }
          }
      ]
