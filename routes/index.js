@@ -1,3 +1,5 @@
+var path = require('path');
+
 module.exports = function () {
 
      return [
@@ -22,7 +24,10 @@ module.exports = function () {
              path: '/images',
              config: {
                  handler: require('./images').get,
-                 auth: 'session'
+                 auth: 'session',
+//                 files: {
+//                     relativeTo: path.resolve(__dirname + "../resources")
+//                 }
              }
          },
          {
@@ -41,6 +46,13 @@ module.exports = function () {
                  }
              }
          },
+         {
+             method: 'GET',
+             path: '/signup',
+             config: {
+                 handler: require('./register').get
+             }
+         },
 
          {
              method: 'POST',
@@ -55,7 +67,6 @@ module.exports = function () {
              config: {
                  handler: require('./logout').get
              }
-
          },
          {
              method: 'POST',

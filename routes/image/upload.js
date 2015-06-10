@@ -3,6 +3,7 @@ var path = require('path');
 var im = require('imagemagick');
 var mongoose = require('../../lib/mongoose');
 var utils = require('../../lib/utils');
+var Image = require('../../models/image');
 
 exports.post = function (request, reply) {
     var currentUser = request.auth.credentials.username,
@@ -48,12 +49,12 @@ exports.post = function (request, reply) {
     var imageData = {
             user: currentUser,
             path: newPath,
-            thumbPath: thumbPath
+            thumbPath: "/resources/imgs/thumbs/" + hashedImageName
         },
         image = new mongoose.models.Image(imageData);
     image.save(function (err) {
         if (!err) {
-            reply(image).created('/events/' + image._id);    // HTTP 201
+            reply(image).created('/images/' + image._id);    // HTTP 201
         } else {
             reply(err)
         }

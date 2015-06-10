@@ -25,4 +25,4 @@ schema.methods.getPublicFields = function() {
     };
 };
 
-exports.User = mongoose.model('Image', schema);
+exports.Image = mongoose.model('Image', schema);

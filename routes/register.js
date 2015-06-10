@@ -2,6 +2,14 @@ var mongoose = require('../lib/mongoose');
 var async= require('async');
 var User = require('../models/user');
 
+exports.get = function (req, reply) {
+    reply.view('signup',
+        {
+            title: 'Sign Up'
+        }
+    );
+};
+
 exports.post = function (request, reply) {
     var payload = request.payload,
         name = payload.username,

@@ -4,13 +4,13 @@ var config = require('./config');
 var path = require('path');
 
 var server = new Hapi.Server({
-//    connections: {
-//        routes: {
-//            files: {
-//                relativeTo: path.join(__dirname, './public')
-//            }
-//        }
-//    }
+    connections: {
+        routes: {
+            files: {
+                relativeTo: path.join(__dirname, './public')
+            }
+        }
+    }
 });
 
 // Setup the server with a host and port

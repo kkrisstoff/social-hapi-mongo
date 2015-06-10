@@ -25,8 +25,8 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="/home">Home <span class="sr-only">(current)</span></a></li>
-                <li><a href="/images">Images</a></li>
+                <li><a href="/home">Home <span class="sr-only">(current)</span></a></li>
+                <li class="active"><a href="/images">Images</a></li>
             </ul>
             <form class="navbar-form  navbar-right" method="GET" action="/logout">
                 <button type="submit" class="btn btn-default">Log Out</button>
@@ -40,18 +40,10 @@
 
 <div class="container">
     <div class="row">
-        <form method="POST" action="/image/upload" enctype="multipart/form-data">
-            <div class="form-group">
-                <label for="imgName">Image</label>
-                <input type="text" name="fileName" class="form-control" id="imgName" placeholder="Image">
-            </div>
-            <div class="form-group">
-                <label for="file">File input</label>
-                <input type="file" name="fileUpload" id="file">
-                <p class="help-block">Add new image file.</p>
-            </div>
-            <button type="submit" class="btn btn-default">Submit</button>
-        </form>
+        <h2>Images</h2>
+        {{#each images}}
+        <img src="{{thumbPath}}" class="img-responsive" alt="image">
+        {{/each}}
     </div>
 </div>
 </body>

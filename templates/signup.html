@@ -9,18 +9,22 @@
 </head>
 <body>
 <div class="container">
-    <form id="logIn" name="login" class="login-form" method="POST" action="/login">
+    <form id="register" name="login" class="login-form" method="POST" action="/register">
         <div class="row">
-            <h3>Log In</h3>
+            <h3>Register New User</h3>
         </div>
         <div class="row">
             <div class="col-md-6">
-                <p><label for="name">Name</label></p>
-                <input id="name" type="text" name="username" placeholder="Name"/>
+                <p><label for="newName">Name</label></p>
+                <input id="newName" type="text" name="username" placeholder="Your Name"/>
             </div>
             <div class="col-md-6">
-                <p><label for="pass">Password</label></p>
-                <input id="pass" type="password" name="password" placeholder="Password"/>
+                <p><label for="newPass">Password</label></p>
+                <input id="newPass" type="password" name="password" placeholder="Your Password"/>
+            </div>
+            <div class="col-md-6">
+                <p><label for="newMail">Password</label></p>
+                <input id="newMail" type="text" name="mail" placeholder="Your e-mail"/>
             </div>
         </div>
         <div class="row">
@@ -30,17 +34,13 @@
         </div>
         <div class="row">
             <div class="col-md-6">
-                <input type="submit" value="Log In"/>
+                <input type="submit" value="Register New User"/>
             </div>
             <div class="col-md-6">
 
             </div>
         </div>
     </form>
-    <div class="row">
-        <a href="signup">Register New User</a>
-    </div>
 </div>
-
 </body>
 </html>
