@@ -12,7 +12,7 @@ exports.post = function (request, reply) {
         imageName = data.fileUpload.filename,
         imagePath = data.fileUpload.path;
 
-    var imagesRootPath = path.resolve(__dirname + "../../../resources/imgs"),
+    var imagesRootPath = path.resolve(__dirname + "../../../resources/images"),
         hashedImageName = utils.hashedImageName(imageName),
         newPath = imagesRootPath + "/" + hashedImageName,
         thumbPath = imagesRootPath + "/thumbs/" + hashedImageName;
@@ -49,7 +49,7 @@ exports.post = function (request, reply) {
     var imageData = {
             user: currentUser,
             path: newPath,
-            thumbPath: "/resources/imgs/thumbs/" + hashedImageName
+            thumbPath: "/resources/images/thumbs/" + hashedImageName
         },
         image = new mongoose.models.Image(imageData);
     image.save(function (err) {

@@ -6,9 +6,9 @@ var path = require('path');
 var server = new Hapi.Server({
     connections: {
         routes: {
-            files: {
-                relativeTo: path.join(__dirname, './public')
-            }
+//            files: {
+//                relativeTo: path.join(__dirname, './public')
+//            }
         }
     }
 });
