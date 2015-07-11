@@ -42,19 +42,20 @@ exports.post = function (request, reply) {
                 if (err) throw err;
                 console.log('resized image to fit within 200x200px');
             });
-            reply.redirect('/');
+            //reply.redirect('/');
         });
     });
 
     var imageData = {
             user: currentUser,
-            path: newPath,
+            path: "/resources/images/" + hashedImageName,
             thumbPath: "/resources/images/thumbs/" + hashedImageName
         },
         image = new mongoose.models.Image(imageData);
     image.save(function (err) {
         if (!err) {
-            reply(image).created('/images/' + image._id);    // HTTP 201
+            //reply(image).created('/images/' + image._id);    // HTTP 201
+            reply.redirect('/images/' + image._id);    // HTTP 201
         } else {
             reply(err)
         }

@@ -24,10 +24,15 @@ module.exports = function () {
              path: '/images',
              config: {
                  handler: require('./images').get,
-                 auth: 'session',
-//                 files: {
-//                     relativeTo: path.resolve(__dirname + "../resources")
-//                 }
+                 auth: 'session'
+             }
+         },
+         {
+             method: 'GET',
+             path: '/images/{id}',
+             config: {
+                 handler: require('./image/image').get,
+                 auth: 'session'
              }
          },
          {

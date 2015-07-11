@@ -2,53 +2,53 @@
 exports.register = function(server, options, next){
 
     server.route([
-//        {
-//            method: 'GET',
-//            path: '/partials/{path*}',
-//            config: {
-//                handler: {
-//                    directory: { path: './server/views/partials' }
-//                },
-//                id: 'partials'
-//            }
-//        },
         {
             method: 'GET',
-            path: '/images/{path*}',
+            path: '/resources/images/{path*}',
+            handler: {
+                directory: { path: './resources/images' }
+            },
             config: {
-                handler: {
-                    directory: { path: './resources' }
-                },
+                id: 'image'
+            }
+        },
+        {
+            method: 'GET',
+            path: '/resources/images/thumbs/{path*}',
+            handler: {
+                directory: { path: './resources/images/thumbs' }
+            },
+            config: {
                 id: 'images'
             }
         },
         {
             method: 'GET',
             path: '/css/{path*}',
+            handler: {
+                directory: { path: './public/css' }
+            },
             config: {
-                handler: {
-                    directory: { path: './public/css' }
-                },
                 id: 'css'
             }
         },
         {
             method: 'GET',
             path: '/vendor/{path*}',
+            handler: {
+                directory: { path: './public/vendor' }
+            },
             config: {
-                handler: {
-                    directory: { path: './public/vendor' }
-                },
                 id: 'js'
             }
         },
         {
             method: 'GET',
             path: '/bower_components/{path*}',
+            handler: {
+                directory: { path: './public/bower_components' }
+            },
             config: {
-                handler: {
-                    directory: { path: './public/bower_components' }
-                },
                 id: 'bower'
             }
         }

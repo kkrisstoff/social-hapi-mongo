@@ -1,18 +1,21 @@
-var Image = require('../models/image').Image;
+var Image = require('../../models/image').Image;
+
 exports.get = function (request, reply) {
     var user = request.auth.credentials,
-        userName = user.username;
+        userName = user.username,
+        imgId = request.params.id;
 
+    console.log(imgId);
     if (request.auth.isAuthenticated) {
-        Image.find({user: userName}, {}).exec(function(err, items) {
+        Image.findOne({_id: imgId}, {}).exec(function(err, item) {
             "use strict";
             if (err) throw err;//callback(err, null);
 
-            return reply.view('images',
+            return reply.view('image',
                 {
                     title: 'Images',
                     user: userName,
-                    images: items
+                    image: item
                 }
             );
         });
