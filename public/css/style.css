@@ -1,16 +1,11 @@
 
-select{
-    height: 30px;
-    line-height: 30px;
-}
-
 .login-form,
 .signup-form{
     background-color: #0067ab;
     color: #eee;
     width: 380px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
+    padding: 15px;
     overflow: hidden;
 }
 .login-form input[type="text"],
@@ -19,18 +14,22 @@ select{
 .signup-form input[type="password"]{
     width: 100%;
 }
-
-.login-form input[type="submit"],
-.login-form .button,
-.signup-form input[type="submit"],
-.signup-form .button{
-    margin: 10px 20px;
+.login-form .controls,
+.signup-form .controls{
+    margin-top: 10px;
 }
-
-.signup-form,
+.signup-form h3,
 .login-form h3{
     text-align: center;
 }
+
+.upload-form{
+    width: 80%;
+    margin: 20px auto;
+}
+.upload-form .file-input{
+
+ }
 
 .board-form{
     padding: 20px 0;
@@ -45,4 +44,20 @@ select{
 .user-info{
     float: right;
     font-weight: bold;
+}
+
+/*images page*/
+.image-thumb-holder{
+    margin-bottom: 10px;
+}
+.image-thumb-holder a{
+    float: left;
+    display: block;
+    width: 280px;
+}
+.image-thumb-holder a > img{
+    width: 100%;
+}
+.image-thumb-holder div.btn{
+    margin: 5px 10px;
 }

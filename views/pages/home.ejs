@@ -1,0 +1,18 @@
+<% include ../partials/header.ejs %>
+
+<div class="container">
+    <div class="row">
+        <form class="upload-form" method="POST" action="/image/upload" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="imgName">Image</label>
+                <input type="text" name="imgName" class="form-control" id="imgName" placeholder="Image">
+            </div>
+            <div class="form-group">
+                <label for="file">File input</label>
+                <input class="file-input" type="file" name="fileUpload" id="file">
+                <p class="help-block">Add new image file.</p>
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+    </div>
+</div>

@@ -23,7 +23,8 @@ exports.post = function (request, reply) {
     var user = new mongoose.models.User(userData);
     user.save(function (err) {
         if (!err) {
-            reply(user).created('/events/' + user._id);    // HTTP 201
+            reply().redirect('/home');
+            //reply(user).created('/events/' + user._id);    // HTTP 201
         } else {
             reply(err)
         }

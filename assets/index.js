@@ -3,6 +3,18 @@ exports.register = function(server, options, next){
 
     server.route([
         {
+            //server.route({ method: 'GET', path: '/favicon.ico', handler: { file: 'favicon.ico' }, config: { cache: { expiresIn: 86400000 } } });
+            method: 'GET',
+            path: '/favicon.ico',
+            handler: {
+                file: 'favicon.ico'
+            },
+            config: {
+                //cache: { expiresIn: 86400000 },
+                id: 'favicon'
+            }
+        },
+        {
             method: 'GET',
             path: '/resources/images/{path*}',
             handler: {
@@ -34,9 +46,9 @@ exports.register = function(server, options, next){
         },
         {
             method: 'GET',
-            path: '/vendor/{path*}',
+            path: '/js/{path*}',
             handler: {
-                directory: { path: './public/vendor' }
+                directory: { path: './public/js' }
             },
             config: {
                 id: 'js'
@@ -44,12 +56,12 @@ exports.register = function(server, options, next){
         },
         {
             method: 'GET',
-            path: '/bower_components/{path*}',
+            path: '/vendor/{path*}',
             handler: {
-                directory: { path: './public/bower_components' }
+                directory: { path: './public/vendor' }
             },
             config: {
-                id: 'bower'
+                id: 'vendor'
             }
         }
     ]);

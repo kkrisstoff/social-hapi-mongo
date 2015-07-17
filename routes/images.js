@@ -10,6 +10,7 @@ exports.get = function (request, reply) {
 
             return reply.view('images',
                 {
+                    page: 'images',
                     title: 'Images',
                     user: userName,
                     images: items

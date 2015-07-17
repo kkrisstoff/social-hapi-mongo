@@ -23,15 +23,21 @@ server.connection({
 
 server.views({
     engines: {
-        html: require('handlebars')
-        //ejs: require('ejs')
+        //html: require('handlebars'),
+        ejs: require('ejs')
     },
     relativeTo: __dirname,
-    path: './templates'
+    path: './views/pages',
+    partialsPath: './views/partials',
+    layout: true,
+    layoutPath: './views'
 });
 
+//todo: am i need include it here?
 //DB connection
 var mongoose = require('./lib/mongoose');
+//cloudinary
+var cloudinary = require('./lib/cloudinary');
 
 // Print some information about the incoming request for debugging purposes
 server.ext('onRequest', function (request, reply) {

@@ -5,22 +5,45 @@ var mongoose = require('../../lib/mongoose');
 var utils = require('../../lib/utils');
 var Image = require('../../models/image');
 
+var imageHandler = require("../../filehendler");
+
 exports.post = function (request, reply) {
     var currentUser = request.auth.credentials.username,
         data = request.payload,
-        caption = data.name,
-        imageName = data.fileUpload.filename,
+        caption = data.imgName,
         imagePath = data.fileUpload.path;
 
-    var imagesRootPath = path.resolve(__dirname + "../../../resources/images"),
+    /*var imagesRootPath = path.resolve(__dirname + "../../../resources/images"),
         hashedImageName = utils.hashedImageName(imageName),
         newPath = imagesRootPath + "/" + hashedImageName,
-        thumbPath = imagesRootPath + "/thumbs/" + hashedImageName;
-
-    console.log(hashedImageName);
+        thumbPath = imagesRootPath + "/thumbs/" + hashedImageName;*/
 
 
-    fs.readFile(imagePath, function (err, data) {
+    imageHandler.uploadImage(imagePath, function (err, data) {
+        if (err){
+            console.log('Read File Error: ' + err);
+            throw err;
+        }
+        console.log(data);
+        var imageData = {
+                img_id: data.public_id,
+                user: currentUser,
+                img_name: caption || "untitled image",
+                path: data.url,
+                secure_path: data.secure_url,
+                thumbPath: data.url
+            },
+            image = new mongoose.models.Image(imageData);
+        image.save(function (err) {
+            if (!err) {
+                reply.redirect('/images/' + image._id);
+            } else {
+                reply(err)
+            }
+        });
+    });
+    //save file in system via fs
+    /*fs.readFile(imagePath, function (err, data) {
         if (err){
             console.log('Read File Error: ' + err);
             throw err;
@@ -59,5 +82,5 @@ exports.post = function (request, reply) {
         } else {
             reply(err)
         }
-    });
+    });*/
 };

@@ -1,0 +1,17 @@
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Any Images</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="<%= page == 'home' ? 'active' : '' %>"><a href="/home">Home <span class="sr-only">(current)</span></a></li>
+            <li class="<%= page == 'images' ? 'active' : '' %>"><a href="/images">Images</a></li>
+        </ul>
+        <form class="navbar-form  navbar-right" method="GET" action="/logout">
+            <button type="submit" class="btn btn-default">Log Out</button>
+        </form>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><%= user %></a></li>
+        </ul>
+    </div>
+</nav>

@@ -6,8 +6,8 @@ module.exports = function () {
          {
              method: 'GET',
              path: '/',
+             handler: require('./home').get,
              config: {
-                 handler: require('./home').get,
                  auth: 'session'
              }
          },
@@ -91,6 +91,14 @@ module.exports = function () {
                      allow: 'multipart/form-data'
                  },
                  handler: require('./image/upload').post,
+                 auth: 'session'
+             }
+         },
+         {
+             method: 'DELETE',
+             path: '/image/delete/{id}',
+             config: {
+                 handler: require('./image/delete').delete,
                  auth: 'session'
              }
          }

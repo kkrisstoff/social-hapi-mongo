@@ -1,0 +1,35 @@
+
+<div class="container">
+    <form id="logIn" name="login" class="login-form" method="POST" action="/login">
+        <div class="row">
+            <h3>Log In</h3>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input class="form-control" id="name" type="text" name="username" placeholder="Name"/>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="pass">Password</label>
+                    <input class="form-control" id="pass" type="password" name="password" placeholder="Password"/>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="error" style="display: none">
+                <span class="error-msg"></span>
+            </div>
+        </div>
+        <div class="row controls">
+            <div class="col-md-6">
+                <input class="btn btn-default btn-sm" type="submit" value="Log In"/>
+            </div>
+            <div class="col-md-6">
+                <a class="btn btn-default btn-sm" href="/signup" role="button">Register New User</a>
+            </div>
+        </div>
+    </form>
+</div>

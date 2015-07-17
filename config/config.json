@@ -3,7 +3,7 @@
     "uri": "",
     "host": "",
     "db": {
-        "path": "mongodb://localhost/social_hapi"
+        "path": "mongodb://hapiadmin:hapiadmin1@ds047612.mongolab.com:47612/social_hapi"
     },
     "session": {
         "secret": "Keep your secrets"

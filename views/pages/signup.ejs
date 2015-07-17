@@ -1,0 +1,41 @@
+
+<div class="container">
+    <form id="register" name="login" class="login-form" method="POST" action="/register">
+        <div class="row">
+            <h3>Register New User</h3>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="newName">Name</label>
+                    <input class="form-control" id="newName" type="text" name="username" placeholder="Your Name"/>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="newPass">Password</label>
+                    <input class="form-control" id="newPass" type="password" name="password" placeholder="Your Password"/>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="newMail">Your e-mail</label>
+                    <input class="form-control" id="newMail" type="text" name="mail" placeholder="Your e-mail"/>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="error" style="display: none">
+                <span class="error-msg"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <input class="btn btn-default btn-sm" type="submit" value="Register New User"/>
+            </div>
+            <div class="col-md-6">
+                <a class="btn btn-default btn-sm" href="/login" role="button">Log In</a>
+            </div>
+        </div>
+    </form>
+</div>

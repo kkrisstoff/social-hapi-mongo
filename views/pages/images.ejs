@@ -1,0 +1,31 @@
+<% include ../partials/header.ejs %>
+
+<div class="container">
+    <% if (images.length > 0) { %>
+    <h2>Images</h2>
+    <% images.forEach(function(image) { %>
+    <div class="row image-thumb-holder">
+        <p><%= image.img_name %></p>
+        <a href="images/<%= image._id %>"><img src="<%= image.thumbPath %>" class="img-rounded" alt="image"></a>
+        <div class="deleteImg btn btn-default" data-id="<%= image._id %>" role="button">Delete</div>
+    </div>
+    <% }) %>
+    <% } else { %>
+    <h2>You don't have any image for display</h2>
+    <% } %>
+</div>
+
+<script type="text/javascript">
+    var delBtn = $('.deleteImg');
+    delBtn.on('click', deleteImage);
+    function deleteImage(e) {
+        var target = e.currentTarget,
+            id = $(target).data("id");
+        anyImgApp.Network.sendRequest("delete_image", {
+            id: id,
+            success: function () {
+                window.location.reload();
+            }
+        });
+    }
+</script>

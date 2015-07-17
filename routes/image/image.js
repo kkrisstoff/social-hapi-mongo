@@ -13,6 +13,7 @@ exports.get = function (request, reply) {
 
             return reply.view('image',
                 {
+                    page: 'images',
                     title: 'Images',
                     user: userName,
                     image: item

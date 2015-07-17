@@ -5,7 +5,17 @@ var schema = new Schema({
     user: {
         type: String
     },
+    img_id: {
+        type: String
+    },
+    img_name: {
+        type: String
+    },
     path: {
+        type: String,
+        required: true
+    },
+    secure_path: {
         type: String
     },
     thumbPath: {
